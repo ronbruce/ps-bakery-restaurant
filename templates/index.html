@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <header class="header">
+        <a href="/" class="logo">
+            <img src="{{ url_for('static', filename='images/ps-bakery-logo.PNG') }}">
+        </a>
+        <nav class="navbar">
+            <div class="menu-dropdown">
+                <a href="#" class="menu-btn">Menu <i class="fas fa-angle-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="bread">Bread</a>
+                    <a href="snacks">Snacks</a>
+                    <a href="lunch">Lunch</a>
+                    <a href="pastries">Pastries</a>
+                    <a href="greens">Greens</a>
+                    <a href="drinks">Drinks</a>
+                    <a href="breakfast">Breakfast</a>
+                </div>
+            </div>
+            <a href="catering">Catering</a>
+            <a href="about">About</a>
+            <a href="review">Review</a>
+            <a href="contact">Contact</a>
+        </nav>
+        <div class="icons">
+          <div class="search-icons"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div class="cart-icons"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="menu-icons"><i class="fa-solid fa-caret-down"></i></div>
+        </div>
+<!-- Search Form -->
+        <div class="search-form">
+            <input type="search" name="search" id="search-bar" placeholder="Search the menu...">
+            <label for="search-bar" class="fa-solid fa-magnifying-glass"></label>
+        </div>
+<!-- Cart Items -->
+        <div class="cart-items-container">
+            {% for item in cart_items %}
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{{ url_for('static', filename='images/' + item.image)}}">
+                <h3>{{ item.name }}</h3>
+                <div class="price">{{ item.price }}</div>
+            </div>
+            {% endfor %}
+            <a href="" class="btn">Order Now</a>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="hero">
+            <h3>Savor the Flavors of Home</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor accusantium nobis debitis.</p>
+            <a href="" class="btn">Order Now</a>
+        </div>
+    </section>
+<!-- Bread Section -->
+    <section class="bread-section" id="bread">
+        <h3 class="title">p&s<span>bread</span></h3>
+        <div class="wrapper">
+            {% for bread_item in bread_items %}
+            <div class="bread-card">
+                <img src="{{ url_for('static', filename='images/' + bread_item.image)}}">
+                <h3>{{ bread_item.name }}</h3>
+                <div class="price">{{ bread_item.price }}</div>
+                <p>{{ description }}</p>
+                <a href="" class="btn">Add to cart</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- Cake Section -->
+    <section class="cake" id="cake">
+        <h3 class="title">p&s<span>cake</span></h3>
+        <div class="wrapper">
+            {% for cake_item in cake_items %}
+            <div class="cake-card">
+                <img src="{{ url_for('static', filename='images/' + cake_item.image)}}">
+                <h3>{{ cake_item.name }}</h3>
+                <div class="price">{{ cake_item.price }}</div>
+                <p>{{ description }}</p>
+                <a href="" class="btn">Add to cart</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- Snack section -->
+    <section class="snack" id="snack">
+        <h3 class="title">p&s<span>snack</span></h3>
+        <div class="wrapper">
+            {% for snack_item in snack_items %}
+            <div class="snack-card">
+                <img src="{{ url_for('static', filename='images/' + snack_item.image)}}">
+                <h3>{{ snack_item.name }}</h3>
+                <div class="price">{{ snack_item.price }}</div>
+                <a href="" class="btn">Add to cart</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
