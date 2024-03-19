@@ -19,9 +19,10 @@
                 </div>
             </div>
             <a href="catering">Catering</a>
-            <a href="about">About</a>
-            <a href="review">Review</a>
-            <a href="contact">Contact</a>
+            <a href="locations">locations</a>
+            <a href="about-guyanese-food">About guyanese food</a>
+            <a href="sign-up">sign up for email</a>
+    
         </nav>
         <div class="icons">
           <div class="search-icons"><i class="fa-solid fa-magnifying-glass"></i></div>
@@ -49,52 +50,31 @@
     <section class="home" id="home">
         <div class="hero">
             <h3>Savor the Flavors of Home</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor accusantium nobis debitis.</p>
+            <p>Authentic homemade Guyanese cuisine.</p>
             <a href="" class="btn">Order Now</a>
         </div>
     </section>
-<!-- Bread Section -->
-    <section class="bread-section" id="bread">
-        <h3 class="title">p&s<span>bread</span></h3>
-        <div class="wrapper">
-            {% for bread_item in bread_items %}
-            <div class="bread-card">
-                <img src="{{ url_for('static', filename='images/' + bread_item.image)}}">
-                <h3>{{ bread_item.name }}</h3>
-                <div class="price">{{ bread_item.price }}</div>
-                <p>{{ description }}</p>
-                <a href="" class="btn">Add to cart</a>
+<!-- Main content for things like updates, new products, specials and more. -->
+        <div class="main-content-container">
+            <div class="content-image">
+                <img src="{{ url_for('static', filename='images/kai-pilger-unsplash.jpg') }}" alt="Shipping Services">
             </div>
-            {% endfor %}
-        </div>
-    </section>
-    <!-- Cake Section -->
-    <section class="cake" id="cake">
-        <h3 class="title">p&s<span>cake</span></h3>
-        <div class="wrapper">
-            {% for cake_item in cake_items %}
-            <div class="cake-card">
-                <img src="{{ url_for('static', filename='images/' + cake_item.image)}}">
-                <h3>{{ cake_item.name }}</h3>
-                <div class="price">{{ cake_item.price }}</div>
-                <p>{{ description }}</p>
-                <a href="" class="btn">Add to cart</a>
+            <div class="main-content-text">
+                <h2>Our shipping services</h2>
+                <p>We're committed to ensuring swift and secure delivery of your orders and shipments. With our efficient logistics network, we guarantee prompt and safe delivery to your doorstep, every time.</p>
+                <a href="#" class="btn">Learn More</a>
             </div>
-            {% endfor %}
         </div>
-    </section>
-    <!-- Snack section -->
-    <section class="snack" id="snack">
-        <h3 class="title">p&s<span>snack</span></h3>
-        <div class="wrapper">
-            {% for snack_item in snack_items %}
-            <div class="snack-card">
-                <img src="{{ url_for('static', filename='images/' + snack_item.image)}}">
-                <h3>{{ snack_item.name }}</h3>
-                <div class="price">{{ snack_item.price }}</div>
-                <a href="" class="btn">Add to cart</a>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
+<!-- Spices and sauce -->
+        <!-- Section for Sauces and seasoning -->
+<div class="main-content-container">
+    <div class="content-image">
+        <img src="{{ url_for('static', filename='images/heather-ford-unsplash.jpg') }}" alt="Our Spices">
+    </div>
+    <div class="main-content-text">
+        <h2>Our Sauces and Seasoning</h2>
+        <p>Indulge in the rich flavors of our authentic Guyanese sauces and seasonings. Crafted with care and using traditional recipes, our sauces and seasonings add an exquisite touch to your favorite dishes. Elevate your culinary experience with our handcrafted blends, meticulously crafted to capture the essence of Guyanese cuisine.</p>
+        <a href="#" class="btn">Learn More</a>
+    </div>
+</div>
 {% endblock %}
